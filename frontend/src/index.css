@@ -455,8 +455,8 @@ input::placeholder, textarea::placeholder {
 }
 
 /* ── Clamp orbs so they don't cause overflow on narrow screens ── */
-.orb-gold { width: min(400px, 100vw); }
-.orb-warm { width: min(300px, 80vw); right: -50px; }
+.orb-gold { width: min(400px, 100vw); height: min(400px, 100vw); }
+.orb-warm { width: min(300px, 80vw); height: min(300px, 80vw); right: -50px; }
 
 /* ── Mobile ── */
 @media (max-width: 480px) {

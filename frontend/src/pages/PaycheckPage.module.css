@@ -180,7 +180,7 @@
   background: transparent;
   border: none;
   outline: none;
-  font-size: 0.85rem;
+  font-size: 1rem; /* 16px — prevents iOS auto-zoom at all viewport widths */
   color: var(--text-primary);
   padding: 10px 0;
 }
@@ -587,7 +587,6 @@
   .presetGrid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .presetBtn { font-size: 0.68rem; }
   .numInput { font-size: 16px; } /* prevent iOS auto-zoom */
-  .emailInput { font-size: 16px; } /* prevent iOS auto-zoom */
   .legend { font-size: 0.68rem; gap: 2px; }
   .headerActions { gap: 4px; }
   .gmailBtn, .syncBtn { font-size: 0.68rem; padding: 5px 8px; }
