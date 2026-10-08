@@ -10,7 +10,8 @@ const DEMO_SAMPLES = [
   { id: 'startup', label: '🏢 Startup (₹30K)', amount: '₹30,000', bank: 'Kotak Bank' },
 ];
 
-const BACKEND = 'http://localhost:8000';
+const BACKEND = import.meta.env.VITE_API_URL || 
+  (typeof window !== 'undefined' ? `http://${window.location.hostname}:8000` : 'http://localhost:8000');
 
 export function GmailSyncModal({ isOpen, onClose, onSyncSuccess, userEmail = '', sessionId = '' }) {
   const [loading, setLoading] = useState(false);
