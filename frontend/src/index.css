@@ -263,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Inputs ── */
 input, textarea {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px; /* 16px+ prevents iOS Safari auto-zoom on focus */
   color: var(--text-primary);
   background: var(--black-elevated);
   border: 1.5px solid var(--black-border);
@@ -437,9 +437,10 @@ input::placeholder, textarea::placeholder {
   filter: blur(80px);
 }
 
+/* width/height clamped so orbs don't cause horizontal overflow on narrow screens */
 .orb-gold {
-  width: 400px;
-  height: 400px;
+  width: min(400px, 100vw);
+  height: min(400px, 100vw);
   background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
   top: -200px;
   left: 50%;
@@ -447,16 +448,12 @@ input::placeholder, textarea::placeholder {
 }
 
 .orb-warm {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
   background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
   bottom: 100px;
-  right: -100px;
+  right: -100px; /* intentionally offscreen; blur keeps it decorative */
 }
-
-/* ── Clamp orbs so they don't cause overflow on narrow screens ── */
-.orb-gold { width: min(400px, 100vw); height: min(400px, 100vw); }
-.orb-warm { width: min(300px, 80vw); height: min(300px, 80vw); right: -50px; }
 
 /* ── Mobile ── */
 @media (max-width: 480px) {
