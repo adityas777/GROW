@@ -17,6 +17,7 @@ SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
 SMTP_USER = os.getenv("SMTP_USER", "")
 SMTP_PASS = os.getenv("SMTP_PASS", "")
 SLACK_WEBHOOK = os.getenv("SLACK_WEBHOOK_URL", "")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
 
 async def send_email(to: str, subject: str, html_body: str):
@@ -119,7 +120,7 @@ def build_paycheck_email(user_name: str, amount: float, split: dict) -> str:
       </div>
     </div>
     
-    <a href="http://localhost:5173" class="cta">App mein dekho aur approve karo →</a>
+    <a href="{FRONTEND_URL}" class="cta">App mein dekho aur approve karo →</a>
     
     <p class="disclaimer">
       ⚠️ SANDBOX MODE — Yeh illustrative data hai. Koi real money movement nahi hai.<br>
