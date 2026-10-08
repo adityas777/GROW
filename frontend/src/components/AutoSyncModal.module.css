@@ -187,7 +187,7 @@
   color: #f8fafc;
   padding: 0.85rem 1rem;
   border-radius: 12px;
-  font-size: 0.88rem;
+  font-size: 1rem; /* ≥16px prevents iOS auto-zoom on focus */
   line-height: 1.5;
   box-sizing: border-box;
   resize: vertical;
