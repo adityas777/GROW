@@ -1,4 +1,4 @@
-Deployed Link- https://grow-silk.vercel.app/
+Deployed Link- https://grow-rb9l02mpp-adityas777s-projects.vercel.app/
 # Pehla ₹500 — Groww for Gen-Z Investors 🚀
 
 > **"Bina tension ke, pehla investment."**  
