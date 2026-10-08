@@ -453,8 +453,15 @@ input::placeholder, textarea::placeholder {
   right: -100px;
 }
 
+/* ── Clamp orbs so they don't cause overflow on narrow screens ── */
+.orb-gold { width: min(400px, 100vw); }
+.orb-warm { width: min(300px, 80vw); right: -50px; }
+
 /* ── Mobile ── */
 @media (max-width: 480px) {
+  html, body { overflow-x: hidden; }
+  img, svg { max-width: 100%; height: auto; }
+  .bottom-sheet { padding: 20px 16px calc(16px + env(safe-area-inset-bottom)); }
   .card { padding: 16px; border-radius: var(--radius-md); }
   .btn-lg { padding: 16px 24px; }
 }

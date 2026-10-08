@@ -203,6 +203,8 @@
   cursor: pointer;
   text-align: center;
   transition: all 0.15s;
+  min-width: 0;
+  word-break: break-all;
 }
 
 .amtBtnActive {
@@ -700,4 +702,13 @@
 
 .goldColor {
   color: #fbbf24;
+}
+
+@media (max-width: 400px) {
+  .amountGrid { grid-template-columns: repeat(2, 1fr); }
+  .bigValuationText { font-size: 1.8rem; }
+  .bigLaunchBtn { font-size: 0.82rem; }
+  .gameTitle { font-size: 1.15rem; }
+  .eraPills { gap: 0.25rem; }
+  .eraBtn { font-size: 0.7rem; padding: 2px 6px; }
 }

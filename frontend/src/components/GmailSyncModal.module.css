@@ -701,3 +701,10 @@
 .oauthAllowBtn:hover {
   background: #1557b0;
 }
+
+@media (max-width: 400px) {
+  .modal { padding: 1rem 1rem 1.5rem; }
+  .chipsGrid { grid-template-columns: 1fr; }
+  .oauthActions { flex-direction: column; }
+  .oauthDialog { padding: 1.25rem; }
+}

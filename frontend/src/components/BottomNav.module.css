@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 480px;
   justify-content: space-around;
-  padding: 6px 12px 10px;
+  padding: 6px 12px max(10px, env(safe-area-inset-bottom));
 }
 
 .navItem {
@@ -67,4 +67,9 @@
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+@media (max-width: 480px) {
+  .navLabel { font-size: 10px; }
+  .navItem { padding: 4px 4px; }
 }

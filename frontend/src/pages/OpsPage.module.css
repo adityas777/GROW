@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100dvh;
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   background: var(--black-rich);
   position: relative;
@@ -552,4 +553,15 @@
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .content { padding: 12px 14px; }
+  .kpiGrid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .kpiValue { font-size: 1.3rem; }
+  .categoryGrid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tabBtn { padding: 6px 8px; font-size: 0.75rem; }
+  .evalHeroCard { padding: 14px 14px; }
+  .guardrailOverviewCard { flex-direction: column; gap: 10px; }
+  .ruleItem { flex-direction: column; gap: 4px; }
 }

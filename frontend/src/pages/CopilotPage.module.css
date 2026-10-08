@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100dvh;
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
   background: var(--black-rich);
   position: relative;
@@ -348,4 +349,13 @@
 .sendBtn:disabled {
   cursor: not-allowed;
   opacity: 0.4;
+}
+
+@media (max-width: 480px) {
+  .messages { padding: 12px 10px; }
+  .bubble { max-width: 88%; }
+  .inputArea { padding: 10px 10px max(12px, env(safe-area-inset-bottom)); }
+  .textInput { font-size: 16px; } /* prevent iOS auto-zoom */
+  .chip { padding: 7px 12px; font-size: 12px; }
+  .shortcutBtn { font-size: 10px; padding: 6px 4px; }
 }

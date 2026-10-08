@@ -338,3 +338,8 @@
   color: #10b981;
   flex-shrink: 0;
 }
+
+@media (max-width: 400px) {
+  .modal { padding: 1rem 1rem 1.5rem; }
+  .chips { grid-template-columns: 1fr; }
+}

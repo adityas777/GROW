@@ -128,3 +128,8 @@
 .gotItBtn {
   width: 100%;
 }
+
+@media (max-width: 400px) {
+  .termTitle { font-size: 1.1rem; }
+  .body { max-height: 50vh; }
+}

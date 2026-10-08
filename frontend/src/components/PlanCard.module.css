@@ -152,3 +152,11 @@
   margin-top: 10px;
   font-style: italic;
 }
+
+@media (max-width: 480px) {
+  .card { padding: 14px; }
+  .amountValue { font-size: 18px; }
+  .actions { flex-direction: column; gap: 8px; }
+  .explainBtn { width: 100%; font-size: 12px !important; }
+  .confirmBtn { width: 100%; }
+}
