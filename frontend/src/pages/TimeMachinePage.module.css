@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100dvh;
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
   background: var(--black-rich, #0a0a0a);
   position: relative;

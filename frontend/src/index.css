@@ -78,6 +78,7 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -459,7 +460,6 @@ input::placeholder, textarea::placeholder {
 
 /* ── Mobile ── */
 @media (max-width: 480px) {
-  html, body { overflow-x: hidden; }
   img, svg { max-width: 100%; height: auto; }
   .bottom-sheet { padding: 20px 16px calc(16px + env(safe-area-inset-bottom)); }
   .card { padding: 16px; border-radius: var(--radius-md); }
