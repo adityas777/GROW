@@ -1,0 +1,42 @@
+{
+  "name": "Pehla ₹500 — Paisa Dost",
+  "short_name": "Paisa Dost",
+  "description": "India's smartest Hinglish investment copilot. Share your salary SMS to get an instant smart split.",
+  "start_url": "/chat",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/rupee.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "share_target": {
+    "action": "/paycheck/share-sms",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Paisa Split Karo",
+      "short_name": "Split",
+      "url": "/paycheck",
+      "description": "Salary SMS share karke smart split pao"
+    },
+    {
+      "name": "Copilot",
+      "short_name": "Copilot",
+      "url": "/chat",
+      "description": "Paisa Dost AI se baat karo"
+    }
+  ]
+}

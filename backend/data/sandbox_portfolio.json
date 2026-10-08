@@ -1,0 +1,48 @@
+{
+  "local-demo": [
+    {
+      "order_id": "SANDBOX-79E0A2E88C70",
+      "session_id": "local-demo",
+      "fund": "nifty_50",
+      "fund_name": "Nifty 50 Index Fund",
+      "monthly_amount": 500,
+      "risk_level": "Low",
+      "status": "confirmed_sandbox",
+      "disclaimer": "SANDBOX MODE \u2014 No real money movement. Illustrative data only."
+    }
+  ],
+  "test-session": [
+    {
+      "order_id": "SANDBOX-770C3F8CA26F",
+      "session_id": "test-session",
+      "fund": "nifty_50",
+      "fund_name": "Nifty 50 Index Fund",
+      "monthly_amount": 500,
+      "risk_level": "Low",
+      "status": "confirmed_sandbox",
+      "disclaimer": "SANDBOX MODE \u2014 No real money movement. Illustrative data only."
+    }
+  ],
+  "51bc9df0-ac93-4c77-a58f-06bd23761d45": [
+    {
+      "order_id": "SANDBOX-51665F1B8646",
+      "session_id": "51bc9df0-ac93-4c77-a58f-06bd23761d45",
+      "fund": "nifty50-index",
+      "fund_name": "Nifty 50 Index Fund",
+      "monthly_amount": 500,
+      "risk_level": "Medium",
+      "status": "confirmed_sandbox",
+      "disclaimer": "SANDBOX MODE \u2014 No real money movement. Illustrative data only."
+    },
+    {
+      "order_id": "SANDBOX-2C1FE307B8CD",
+      "session_id": "51bc9df0-ac93-4c77-a58f-06bd23761d45",
+      "fund": "nifty_50",
+      "fund_name": "Nifty 50 Index Fund",
+      "monthly_amount": 500,
+      "risk_level": "Low",
+      "status": "confirmed_sandbox",
+      "disclaimer": "SANDBOX MODE \u2014 No real money movement. Illustrative data only."
+    }
+  ]
+}

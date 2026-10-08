@@ -1,0 +1,460 @@
+/* ═══════════════════════════════════════════════════════════════
+   Pehla ₹500 — Global CSS Design System
+   Golden-Black Premium Theme with Camera Lighting
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Gold Palette ── */
+  --gold-50: #fffbeb;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #D4AF37;
+  --gold-600: #b8961e;
+  --gold-700: #92750f;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --gold-glow-soft: rgba(212, 175, 55, 0.15);
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F5D060 40%, #C9A227 70%, #D4AF37 100%);
+  --gold-gradient-text: linear-gradient(135deg, #D4AF37, #F5D060, #D4AF37);
+  
+  /* ── Black/Dark Palette ── */
+  --black-pure: #000000;
+  --black-rich: #0a0a0a;
+  --black-deep: #111111;
+  --black-card: #161616;
+  --black-elevated: #1c1c1c;
+  --black-border: #2a2a2a;
+  --black-border-light: #333333;
+  
+  /* ── Text Colors ── */
+  --text-primary: #f5f5f5;
+  --text-secondary: #a8a8a8;
+  --text-muted: #666666;
+  --text-gold: #D4AF37;
+  
+  /* ── Semantic Colors ── */
+  --green-success: #22c55e;
+  --green-glow: rgba(34, 197, 94, 0.3);
+  --amber-warn: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.3);
+  --red-danger: #ef4444;
+  --red-glow: rgba(239, 68, 68, 0.3);
+  --blue-info: #3b82f6;
+  
+  /* ── Camera Lighting Effects ── */
+  --spotlight-gold: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(212,175,55,0.3) 0%, transparent 60%);
+  --spotlight-warm: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(245,208,96,0.2) 0%, transparent 50%);
+  --rim-light: 0 0 80px rgba(212, 175, 55, 0.08);
+  --card-glow: 0 0 40px rgba(212, 175, 55, 0.1), 0 4px 24px rgba(0,0,0,0.8);
+  --card-glow-hover: 0 0 60px rgba(212, 175, 55, 0.2), 0 8px 40px rgba(0,0,0,0.9);
+  
+  /* ── Typography ── */
+  --font-primary: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* ── Spacing ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--black-rich);
+  color: var(--text-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Camera lighting — warm top light */
+  background-image: var(--spotlight-gold);
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ── Gold Text Gradient ── */
+.text-gold {
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold-solid { color: var(--gold-500); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+/* ── Cards ── */
+.card {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--card-glow);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--card-glow-hover);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.card-gold {
+  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, var(--black-card) 100%);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12), 0 4px 24px rgba(0,0,0,0.8);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background var(--transition-fast);
+}
+
+.btn:hover::after { background: rgba(255,255,255,0.06); }
+.btn:active::after { background: rgba(255,255,255,0.12); }
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--gold-gradient);
+  color: #000;
+  box-shadow: 0 4px 24px var(--gold-glow), 0 0 0 0 var(--gold-glow);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 32px var(--gold-glow), 0 0 60px rgba(212,175,55,0.25);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold-500);
+  border: 1.5px solid var(--gold-500);
+}
+
+.btn-secondary:hover {
+  background: var(--gold-glow-soft);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+.btn-ghost {
+  background: var(--black-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--black-border);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold-500);
+  color: var(--gold-500);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red-danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+  min-height: 36px;
+}
+
+.btn-lg {
+  padding: 18px 32px;
+  font-size: 17px;
+  min-height: 56px;
+}
+
+/* ── Risk Chips ── */
+.risk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.risk-low {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green-success);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.risk-medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--amber-warn);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.risk-high {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red-danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ── Inputs ── */
+input, textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--black-elevated);
+  border: 1.5px solid var(--black-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px var(--gold-glow-soft);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--black-border-light); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-500); }
+
+/* ── Sandbox Banner ── */
+.sandbox-banner {
+  background: linear-gradient(90deg, rgba(245,158,11,0.15) 0%, rgba(212,175,55,0.1) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-size: 11px;
+  color: var(--amber-warn);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ── Loading Dots ── */
+.loading-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: var(--gold-500);
+  border-radius: 50%;
+  animation: dotBounce 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Pulse animation ── */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 var(--gold-glow); }
+  70% { box-shadow: 0 0 0 12px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* ── Shimmer ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--black-card) 25%, var(--black-elevated) 50%, var(--black-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Fade-in ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fadeIn var(--transition-slow) ease both; }
+.animate-fade-up { animation: fadeInUp 0.4s ease both; }
+.animate-scale { animation: scaleIn 0.3s var(--spring) both; }
+
+/* ── Mic button states ── */
+@keyframes micPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 var(--gold-glow); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 16px transparent; }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 transparent; }
+}
+
+/* ── Bottom sheet ── */
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--black-elevated);
+  border-top: 1px solid var(--black-border);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  z-index: 101;
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUpSheet 0.35s var(--spring);
+}
+
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ── Dividers ── */
+.divider {
+  height: 1px;
+  background: var(--black-border);
+  margin: 16px 0;
+}
+
+/* ── Camera Lighting Orbs ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+.orb-gold {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orb-warm {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  bottom: 100px;
+  right: -100px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .card { padding: 16px; border-radius: var(--radius-md); }
+  .btn-lg { padding: 16px 24px; }
+}

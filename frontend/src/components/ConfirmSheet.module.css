@@ -1,0 +1,126 @@
+.handle {
+  width: 40px;
+  height: 4px;
+  background: var(--gold-dark);
+  border-radius: var(--radius-full);
+  margin: 0 auto 16px;
+  opacity: 0.6;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkIcon {
+  color: var(--gold-primary);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin: 0;
+}
+
+.closeBtn {
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: var(--radius-full);
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+}
+
+.details {
+  background: rgba(13, 13, 13, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  font-family: var(--font-display);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.riskReminder {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 16px;
+  color: #FCD34D;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.riskReminder svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.riskReminder p {
+  margin: 0;
+}
+
+.voiceHint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.confirmBtn {
+  width: 100%;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+}
+
+.legal {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.35;
+  margin: 0;
+}

@@ -1,0 +1,582 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--black-rich);
+  position: relative;
+  padding-bottom: 72px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.backBtn {
+  color: var(--text-secondary);
+}
+
+.titleWrap {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bannerWrap {
+  padding: 12px 20px 0;
+}
+
+.content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card */
+.card {
+  background: var(--black-elevated);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+
+/* Preset buttons */
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.presetBtn {
+  background: rgba(18, 18, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 8px 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.presetBtn:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--text-primary);
+}
+
+.presetActive {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+/* Inputs */
+.inputGroup {
+  margin-bottom: 14px;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0 12px;
+}
+
+.inputPrefix {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-right: 6px;
+}
+
+.numInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 10px 0;
+  font-family: var(--font-display);
+}
+
+.emailWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0 12px;
+}
+
+.emailIcon {
+  color: var(--text-muted);
+}
+
+.emailInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  padding: 10px 0;
+}
+
+.triggerBtn {
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Nudge In-App Banner */
+.nudgeCard {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(26, 26, 26, 0.95) 100%);
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.nudgeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.nudgeTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.emailSentBadge {
+  font-size: 0.72rem;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.nudgeMsg {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Sliders */
+.slidersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sliderItem {
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.sliderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sliderLabelWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sliderName {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sliderSubtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.sliderValueWrap {
+  text-align: right;
+}
+
+.sliderAmount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  font-family: var(--font-display);
+  display: block;
+}
+
+.sliderPercent {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.rangeInput {
+  width: 100%;
+  accent-color: var(--gold-primary);
+  cursor: pointer;
+}
+
+.rangeGreen {
+  accent-color: #10B981;
+}
+
+.greenText {
+  color: #10B981;
+}
+
+.progressWrap {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: #F59E0B;
+  border-radius: var(--radius-full);
+  transition: width 0.2s ease;
+}
+
+/* Visual Bar */
+.visualBar {
+  display: flex;
+  height: 10px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.barSegmentEmergency {
+  background: var(--gold-primary);
+  transition: width 0.2s ease;
+}
+
+.barSegmentSip {
+  background: #10B981;
+  transition: width 0.2s ease;
+}
+
+.barSegmentFun {
+  background: #F59E0B;
+  transition: width 0.2s ease;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dotGold {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  display: inline-block;
+}
+
+.dotGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  display: inline-block;
+}
+
+.dotAmber {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F59E0B;
+  display: inline-block;
+}
+
+.approveBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.approvedSuccessCard {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.approvedHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #10B981;
+}
+
+.goldIcon {
+  color: var(--gold-primary);
+}
+
+.greenIcon {
+  color: #10B981;
+}
+
+.amberIcon {
+  color: #F59E0B;
+}
+
+/* Auto-Sync Header, Gmail & SMS Buttons */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gmailBtn {
+  background: rgba(234, 67, 53, 0.12);
+  border: 1px solid rgba(234, 67, 53, 0.35);
+  color: #ea4335;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.gmailBtn:hover {
+  background: rgba(234, 67, 53, 0.22);
+  border-color: #ea4335;
+}
+
+.syncBtn {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.syncBtn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+}
+
+.salaryDetectedCard {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 24, 33, 0.95) 100%);
+  border: 1px solid #10B981;
+  border-radius: var(--radius-lg, 12px);
+  padding: 14px 16px;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+.salaryDetectedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.salaryDetectedBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.salaryDetectedMeta {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.salaryDetectedTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 4px 0;
+}
+
+/* Market Recommendations Card */
+.marketCard {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-xl, 16px);
+  padding: 18px;
+}
+
+.marketHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.marketHeader h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #38bdf8;
+}
+
+.marketTone {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.allocationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.allocItem {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.allocTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.allocCategory {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.allocAmount {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.allocRationale {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.allocVehicles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.vehicleTag {
+  font-size: 0.68rem;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}

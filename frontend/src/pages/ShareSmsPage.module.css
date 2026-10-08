@@ -1,0 +1,339 @@
+.page {
+  min-height: 100dvh;
+  background: var(--black-rich, #0a0a0a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-primary, 'Outfit', sans-serif);
+}
+
+.backdropGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(212, 175, 55, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: var(--black-card, #161616);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.08), 0 20px 60px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+/* Processing state */
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.08);
+  border: 2px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinIcon {
+  color: var(--gold-500, #D4AF37);
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.warnIcon {
+  color: #f59e0b;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary, #f5f5f5);
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #a8a8a8);
+  line-height: 1.5;
+}
+
+/* Raw SMS preview */
+.rawSmsBox {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.rawLabel {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.rawText {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #9aa5b8;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Success state */
+.successHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.successIconWrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon {
+  color: #22c55e;
+}
+
+/* Amount card */
+.amountCard {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.05));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.amountLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--gold-500, #D4AF37);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.amountValue {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.accountTag {
+  font-size: 0.75rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Split preview */
+.splitPreview {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: left;
+}
+
+.splitTitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.splitBar {
+  display: flex;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  gap: 2px;
+}
+
+.barEmergency {
+  background: var(--gold-500, #D4AF37);
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease;
+}
+
+.barSip {
+  background: #22c55e;
+  transition: width 0.5s ease;
+}
+
+.barFun {
+  background: #f59e0b;
+  border-radius: 0 10px 10px 0;
+  flex: 1;
+  transition: width 0.5s ease;
+}
+
+.splitRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.splitRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #a8a8a8);
+}
+
+.splitRow strong {
+  margin-left: auto;
+  color: var(--text-primary, #f5f5f5);
+  font-size: 0.9rem;
+}
+
+.greenText {
+  color: #22c55e !important;
+}
+
+.dotGold, .dotGreen, .dotAmber {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotGold { background: var(--gold-500, #D4AF37); }
+.dotGreen { background: #22c55e; }
+.dotAmber { background: #f59e0b; }
+
+/* Email note */
+.emailSentNote {
+  font-size: 0.8rem;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 0.5rem 0.85rem;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* CTA buttons */
+.ctaBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #D4AF37, #F5D060);
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
+
+.secondaryBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary, #a8a8a8);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Hint box */
+.hintBox {
+  width: 100%;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.hintBox p {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.hintBox ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hintBox li {
+  font-size: 0.8rem;
+  color: #9aa5b8;
+  list-style: none;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: #444;
+  white-space: nowrap;
+}

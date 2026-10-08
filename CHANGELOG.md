@@ -1,0 +1,33 @@
+# Session Changelog
+
+This file tracks all changes made during the current session for easy reference and continuity.
+
+---
+
+## Session Started: 2026-10-07
+
+### Changes Made
+
+| Date | Time | File(s) Modified | Description |
+|------|------|------------------|-------------|
+| 2026-10-07 | — | `CHANGELOG.md` | Created changelog file to track session changes |
+| 2026-10-07 | 16:31 | `frontend/src/components/AutoSyncModal.jsx` | Fixed broken JSX syntax and character encoding issues |
+| 2026-10-07 | 17:01 | `frontend/vite.config.js`, `frontend/src/lib/api.js`, `backend/main.py` | Added LAN network support (`--host`, dynamic hostname, CORS regex) |
+| 2026-10-07 | 22:04 | `frontend/src/lib/timeMachineData.js`, `frontend/src/pages/TimeMachinePage.jsx`, `frontend/src/pages/TimeMachinePage.module.css`, `frontend/src/App.jsx`, `frontend/src/pages/WelcomePage.jsx`, `frontend/src/pages/CopilotPage.jsx`, `frontend/src/pages/PortfolioPage.jsx` | Created interactive Compounding Time Machine simulation game (1983-2026 past wealth simulator with 10 legendary stocks, custom SIP amounts, split allocations, time warp animations, hockey-stick compounding curves, reality checks, and real-world equivalents) |
+| 2026-10-07 | 22:16 | `frontend/src/components/BottomNav.jsx`, `frontend/src/components/TimeMachineGame.jsx`, `frontend/src/components/TimeMachineModal.jsx`, `frontend/src/pages/CopilotPage.jsx`, `frontend/src/pages/PortfolioPage.jsx`, `frontend/src/pages/PaycheckPage.jsx`, `frontend/src/pages/TimeMachinePage.jsx` | Fully integrated Time Machine into the main app: added unified persistent bottom navigation tabs (Copilot, Time Machine, Portfolio, Salary Split), in-chat bottom-sheet modal popup directly inside Copilot chat, and mobile-first matching layout |
+| 2026-10-07 | 22:23 | `frontend/src/pages/CopilotPage.jsx`, `frontend/src/components/TimeMachineModal.jsx` | Fixed black/blank screen crash: added missing `Sparkles` icon import in `CopilotPage.jsx` and corrected modal animation wrapping |
+| 2026-10-07 | 22:37 | `frontend/src/lib/api.js`, `frontend/vite.config.js`, `frontend/src/components/AutoSyncModal.jsx`, `frontend/src/pages/PaycheckPage.jsx` | Fixed "Salary Credit Simulate Karo" and "Ye Split Approve Karo" buttons + fixed 404 on `/paycheck/simulate`: added `api.post`/`api.get`/`api.simulatePaycheckSMS` helpers, Vite reverse proxy for API routes, and robust session fallback |
+| 2026-10-07 | 23:17 | `frontend/src/pages/CopilotPage.jsx`, `frontend/src/lib/api.js`, `backend/core/tools.py`, `backend/routers/chat.py`, `backend/routers/portfolio.py`, `frontend/src/pages/PortfolioPage.jsx` | Fixed "Confirm karo" button & Portfolio updates: wired `PlanCard` onConfirm to populate `currentPlan`/`pendingPlan`/`confirmToken` and trigger `ConfirmSheet`; forwarded `plan` in `api.confirmOrder`; added disk JSON persistence for sandbox portfolio (`data/sandbox_portfolio.json`) to survive server reloads; and added 1-click **"⚡ Instant Test: Add ₹500 SIP"** button in Portfolio page with backend seed endpoint `POST /portfolio/{session_id}/seed`. |
+| 2026-10-08 | 12:30 | `frontend/public/manifest.json`, `frontend/src/pages/ShareSmsPage.jsx`, `frontend/src/pages/ShareSmsPage.module.css`, `frontend/src/components/AutoSyncModal.jsx`, `frontend/src/components/AutoSyncModal.module.css`, `frontend/src/pages/PaycheckPage.jsx`, `frontend/src/App.jsx` | Built full **Android Web Share Target SMS Flow**: (1) `manifest.json` with `share_target` so the installed PWA appears in Android share sheet; (2) `ShareSmsPage` landing page that auto-parses the shared SMS, shows detected salary + split preview, sends email, then redirects to PaycheckPage; (3) Revamped `AutoSyncModal` into a clean bottom-sheet with "Setup (1 Time)" tab (Add to Home Screen guide) + "Test Karo" tab (SMS simulator with sample chips); (4) `PaycheckPage` reads shared event from router state or sessionStorage on mount. |
+| 2026-10-08 | 12:55 | `frontend/vite.config.js`, `frontend/src/components/AutoSyncModal.jsx`, `frontend/src/components/AutoSyncModal.module.css`, `frontend/src/pages/PaycheckPage.jsx` | (1) Fixed local & network links 404 by adding HTML request `bypass` to Vite proxy; (2) Replaced complex PWA install flow with a frictionless **"Paste Salary SMS"** modal: 1-click clipboard paste, quick sample chips (Infosys ₹1.2L, TCS ₹85K, Stipend ₹45K, Startup ₹30K), zero storage privacy guarantee, and auto-filling paycheck split sliders upon analysis. |
+| 2026-10-08 | 13:20 | `backend/core/gmail_scanner.py`, `backend/routers/paycheck.py`, `frontend/src/lib/api.js`, `frontend/src/components/GmailSyncModal.jsx`, `frontend/src/components/GmailSyncModal.module.css`, `frontend/src/pages/PaycheckPage.jsx`, `frontend/src/pages/PaycheckPage.module.css` | Implemented full **"Sync with Gmail"** feature: (1) `backend/core/gmail_scanner.py` connects to Gmail via IMAP over SSL using user credentials from `.env` (`pglapgla123@gmail.com`) and scans inbox messages for salary credit notices; (2) Added `POST /paycheck/sync-gmail` endpoint with live scanning and instant test chips (`infosys`, `tcs`, `stipend`, `startup`); (3) Created `GmailSyncModal` with live scan animation, SSL security badge, email preview, 1-click test chips, and instant split application; (4) Added **"Sync Gmail"** button in Paycheck header alongside "Paste SMS". |
+| 2026-10-08 | 13:35 | `backend/routers/paycheck.py`, `backend/core/gmail_scanner.py`, `frontend/src/components/GmailSyncModal.jsx`, `frontend/src/components/GmailSyncModal.module.css` | Fixed `[AUTHENTICATIONFAILED]` on non-configured accounts: (1) Imported missing `os` in `paycheck.py`; (2) Decoupled user session email (`adityas23100@iiitnr.edu.in`) from backend IMAP credentials (`pglapgla123@gmail.com`); (3) Added interactive Google OAuth 2.0 Consent dialog (`gmail.readonly`) for the signed-in user; (4) Added dedicated "Scan Configured Mailbox" button for live backend inbox scans; (5) Enabled 1-click test chips (`Infosys`, `TCS`, `Stipend`, `Startup`) to work instantly. |
+| 2026-10-08 | 14:03 | `frontend/vite.config.js` | Completely fixed localhost/network links not opening: removed redundant proxy hijacking rules that were intercepting React SPA page routes (`/paycheck`, `/chat`, `/portfolio`) and proxying them to FastAPI backend; all frontend routes now reliably return 200 OK directly from Vite while Axios client communicates directly with FastAPI on port 8000. |
+
+---
+
+## Notes
+
+- This file should be updated after every significant change
+- Include file paths, description of changes, and timestamps
+- Reference this file at the start of new sessions to restore context
